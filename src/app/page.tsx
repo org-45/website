@@ -4,7 +4,7 @@ import {Textarea} from '@/components/ui/textarea';
 import {Github, Rocket, Globe, Users, Target} from 'lucide-react';
 import Image from 'next/image';
 
-import Logo from '../images/ORG45.png';
+import Logo from '../images/org45.png';
 
 export default function Org45Website() {
     return (

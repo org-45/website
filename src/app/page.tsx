@@ -1,101 +1,210 @@
-import Image from "next/image";
+import {Button} from '@/components/ui/button';
+import {Input} from '@/components/ui/input';
+import {Textarea} from '@/components/ui/textarea';
+import {Github, Rocket, Globe, Users, Target} from 'lucide-react';
+import Image from 'next/image';
 
-export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+import Logo from '../images/ORG45.png'
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+
+export default function Org45Website() {
+    return (
+        <div className="min-h-screen bg-sky-50 text-gray-800">
+            {/* Hero Section */}
+            <section className="bg-gradient-to-b from-sky-100 to-sky-200 py-20">
+                <div className="container mx-auto px-4 text-center">
+                    <Image src={Logo} alt="Org45 Logo" width={200} height={100} className="mx-auto mb-8" />
+                    <h1 className="text-4xl md:text-5xl font-bold mb-4 text-sky-700">Welcome to org45</h1>
+                    <p className="text-xl mb-8 text-sky-600">
+                        An open-source focused task force team of software developers, enthusiasts, and professionals.
+                    </p>
+                    <Button className="bg-sky-500 hover:bg-sky-600 text-white">Join Our Community</Button>
+                </div>
+            </section>
+
+            {/* About Us Section */}
+            <section className="py-16">
+                <div className="container mx-auto px-4">
+                    <h2 className="text-3xl font-bold mb-8 text-center text-sky-700">About Us</h2>
+                    <div className="max-w-3xl mx-auto">
+                        <p className="text-lg mb-4">
+                            🚀 Org45 is an open-source focused task force team of software developers, enthusiasts, and
+                            professionals.
+                        </p>
+                        <p className="text-lg mb-4">
+                            🌐 We focus on developing projects to maintain a portfolio for respective teams in each
+                            vertical of technologies.
+                        </p>
+                        <p className="text-lg mb-4">
+                            🤝 We prioritize open communication and teamwork, leading to innovative and effective
+                            solutions that exceed expectations.
+                        </p>
+                        <p className="text-lg">
+                            💼 Our incentives are based on team member contributions to open-source projects, as well as
+                            converting POCs and portfolio projects to real contracts.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Projects Section */}
+            <section className="bg-sky-100 py-16">
+                <div className="container mx-auto px-4">
+                    <h2 className="text-3xl font-bold mb-8 text-center text-sky-700">Our Projects</h2>
+                    <p className="text-lg text-center mb-8">
+                        📈 Our goal is to create POCs, MVPs, and portfolio projects for various market verticals using
+                        open-source tools.
+                    </p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {['E-commerce', 'Gaming', 'Fintech'].map((project, index) => (
+                            <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+                                <h3 className="text-xl font-semibold mb-2 text-sky-600">{project}</h3>
+                                <p className="text-gray-600 mb-4">
+                                    A portfolio project showcasing our expertise in {project.toLowerCase()} solutions.
+                                </p>
+                                <Button variant="outline" className="text-sky-500 border-sky-500 hover:bg-sky-50">
+                                    Learn More
+                                </Button>
+                            </div>
+                        ))}
+                    </div>
+                    <div className="text-center mt-8">
+                        <a
+                            href="https://github.com/org-45"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center text-sky-600 hover:text-sky-700">
+                            <Github className="w-5 h-5 mr-2" />
+                            View our projects on GitHub
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            {/* Goals Section */}
+            <section className="py-16">
+                <div className="container mx-auto px-4">
+                    <h2 className="text-3xl font-bold mb-8 text-center text-sky-700">Our Goals</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div className="flex items-start">
+                            <Rocket className="w-8 h-8 text-sky-500 mr-4 flex-shrink-0" />
+                            <div>
+                                <h3 className="text-xl font-semibold mb-2">Develop Portfolio Projects</h3>
+                                <p>
+                                    Create POCs, MVPs, and portfolio projects for various market verticals using
+                                    open-source tools.
+                                </p>
+                            </div>
+                        </div>
+                        <div className="flex items-start">
+                            <Globe className="w-8 h-8 text-sky-500 mr-4 flex-shrink-0" />
+                            <div>
+                                <h3 className="text-xl font-semibold mb-2">Expand Technical Expertise</h3>
+                                <p>
+                                    Cover various technical verticals including UI, backend, mobile, QA, AI, database,
+                                    data engineering, devops, AWS, security, design, low code, agile, AR, VR, and IoT.
+                                </p>
+                            </div>
+                        </div>
+                        <div className="flex items-start">
+                            <Users className="w-8 h-8 text-sky-500 mr-4 flex-shrink-0" />
+                            <div>
+                                <h3 className="text-xl font-semibold mb-2">Foster Community Growth</h3>
+                                <p>
+                                    Focus on college students while welcoming professionals as we secure client
+                                    contracts.
+                                </p>
+                            </div>
+                        </div>
+                        <div className="flex items-start">
+                            <Target className="w-8 h-8 text-sky-500 mr-4 flex-shrink-0" />
+                            <div>
+                                <h3 className="text-xl font-semibold mb-2">Drive Innovation</h3>
+                                <p>
+                                    Encourage open discussions and feedback to meet clients needs and exceed
+                                    expectations.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Team Section */}
+            <section className="bg-sky-100 py-16">
+                <div className="container mx-auto px-4">
+                    <h2 className="text-3xl font-bold mb-8 text-center text-sky-700">Our Team</h2>
+                    <p className="text-lg text-center mb-8">
+                        🧑‍💻 Our team consists of experts in different technical verticals, each responsible for managing
+                        and executing projects.
+                    </p>
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                        {['UI', 'Backend', 'Mobile', 'QA', 'AI', 'Database', 'DevOps', 'AWS'].map((vertical, index) => (
+                            <div key={index} className="bg-white p-4 rounded-lg shadow-md text-center">
+                                <h3 className="text-lg font-semibold text-sky-600">{vertical}</h3>
+                                <p className="text-sm text-gray-600">Expert Team</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Contact Us Section */}
+            <section className="py-16">
+                <div className="container mx-auto px-4">
+                    <h2 className="text-3xl font-bold mb-8 text-center text-sky-700">Contact Us</h2>
+                    <div className="max-w-2xl mx-auto">
+                        <form className="space-y-4">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <Input type="text" placeholder="Name" className="w-full" />
+                                <Input type="email" placeholder="Email" className="w-full" />
+                            </div>
+                            <Input type="text" placeholder="Subject" className="w-full" />
+                            <Textarea placeholder="Your message" className="w-full h-32" />
+                            <Button type="submit" className="bg-sky-500 hover:bg-sky-600 text-white w-full">
+                                Send Message
+                            </Button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            {/* Footer */}
+            <footer className="bg-sky-600 text-white py-8">
+                <div className="container mx-auto px-4">
+                    <div className="flex flex-col md:flex-row justify-between items-center">
+                        <div className="mb-4 md:mb-0 flex items-center">
+                            <Image src={Logo} alt="Org45 Logo" width={100} height={50} className="mr-4" />
+                            <p>Open-source solutions for a better future</p>
+                        </div>
+                        <div className="flex space-x-4">
+                            <a href="#" className="hover:text-sky-200">
+                                Home
+                            </a>
+                            <a href="#" className="hover:text-sky-200">
+                                About
+                            </a>
+                            <a href="#" className="hover:text-sky-200">
+                                Projects
+                            </a>
+                            <a href="#" className="hover:text-sky-200">
+                                Contact
+                            </a>
+                        </div>
+                    </div>
+                    <div className="mt-8 text-center">
+                        <p>&copy; 2024 org45. All rights reserved.</p>
+                        <a
+                            href="https://github.com/org-45"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center mt-2 text-sky-200 hover:text-white">
+                            <Github className="w-5 h-5 mr-2" />
+                            Follow us on GitHub
+                        </a>
+                    </div>
+                </div>
+            </footer>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+    );
 }

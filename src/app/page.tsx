@@ -6,6 +6,21 @@ import Image from 'next/image';
 
 import Logo from '../images/org45.png';
 
+const projects = [
+    {
+        name:"Escrow Agent",
+        desc:"General purpose Escrow agent using Postgresql, go and more."
+    },
+    {
+        name:"Computer book for kids",
+        desc:"200+ ideas as introductory Computer Science book."
+    },
+    {
+        name:"React boilerplate",
+        desc:"Simple production grade, enterprise grade vite based react project starter."
+    },
+]
+
 export default function Org45Website() {
     return (
         <div className="min-h-screen bg-sky-50 text-gray-900">
@@ -55,11 +70,11 @@ export default function Org45Website() {
                         open-source tools.
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {['E-commerce', 'Gaming', 'Fintech'].map((project, index) => (
+                        {projects.map((project, index) => (
                             <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-                                <h3 className="text-xl font-semibold mb-2 text-sky-700">{project}</h3>
+                                <h3 className="text-xl font-semibold mb-2 text-sky-700">{project.name}</h3>
                                 <p className="text-gray-800 mb-4">
-                                    A portfolio project showcasing our expertise in {project.toLowerCase()} solutions.
+                                    {project.desc}
                                 </p>
                                 <Button variant="outline" className="text-sky-900 border-sky-900 hover:bg-sky-50">
                                     Learn More

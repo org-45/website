@@ -28,7 +28,7 @@ export default function RootLayout({
         <html lang="en">
             <head>
                 {/* Google Analytics */}
-                <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" />
+                <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-Q291RN2ZZD" />
                 <Script
                     id="gtag-init"
                     strategy="afterInteractive"
@@ -37,7 +37,7 @@ export default function RootLayout({
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-XXXXXXXXXX', {
+              gtag('config', 'G-Q291RN2ZZD', {
                 page_path: window.location.pathname,
               });
             `,

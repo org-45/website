@@ -50,7 +50,10 @@ export default function RootLayout({
                 {children}
 
                 {/* Render Chimebox component dynamically */}
-                <Chimebox siteId="e641328e-f5fd-4ee4-ad2a-eea64a58406f" />
+                <Chimebox
+                    siteId="e641328e-f5fd-4ee4-ad2a-eea64a58406f"
+                    turnstileDataSiteKey="0x4AAAAAAAyyLs9gui2lJm5y"
+                />
             </body>
         </html>
     );

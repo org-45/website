@@ -50,7 +50,7 @@ export default function RootLayout({
                 {children}
 
                 {/* Render Chimebox component dynamically */}
-                <Chimebox siteId="ab9f8844-8700-4414-9ade-a3221243a7d7" />
+                <Chimebox siteId="e641328e-f5fd-4ee4-ad2a-eea64a58406f" />
             </body>
         </html>
     );
